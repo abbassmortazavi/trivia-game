@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ResultService implements ResultInterface
 {
+    /**
+     * @param ResultRepository $repository
+     */
     public function __construct(protected ResultRepository $repository)
     {
     }

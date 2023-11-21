@@ -26,4 +26,28 @@ interface CommandInterface
      * @return mixed
      */
     public function askQuestion(InputInterface $input, OutputStyle $output, string $player2, $question, $helper): mixed;
+
+    /**
+     * @param InputInterface $input
+     * @param OutputStyle $output
+     * @param $helper
+     * @return mixed
+     */
+    public function askQuestionType(InputInterface $input, OutputStyle $output, $helper): mixed;
+
+    /**
+     * @param InputInterface $input
+     * @param OutputStyle $output
+     * @param string $player1
+     * @param $helper
+     * @return mixed
+     */
+    public function addQuestions(InputInterface $input, OutputStyle $output, string $player1, $helper): mixed;
+
+    /**
+     * @param OutputStyle $output
+     * @param string $playerNumber
+     * @return mixed
+     */
+    public function ask(OutputStyle $output, string $playerNumber): mixed;
 }
