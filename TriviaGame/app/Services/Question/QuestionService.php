@@ -6,6 +6,7 @@ use App\Enums\QuestionType;
 use App\Repository\Question\QuestionRepository;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 
@@ -25,9 +26,9 @@ class QuestionService implements QuestionInterface
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Collection|array
+     * @return Collection|array
      */
-    public function get(): \Illuminate\Database\Eloquent\Collection|array
+    public function get(): Collection|array
     {
         return $this->repository->get();
     }

@@ -5,16 +5,12 @@ namespace App\Console\Commands;
 use App\Enums\QuestionType;
 use App\Services\Command\CommandService;
 use App\Services\Question\QuestionService;
-use App\Services\Result\ResultService;
-use App\Strategy\MultipleChoiceQuestion;
-use App\Strategy\TrueFalseQuestion;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Console\OutputStyle;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 
 class TriviaGameCommand extends Command
@@ -55,9 +51,7 @@ class TriviaGameCommand extends Command
         } else {
             $questions = $this->addQuestions($this->input, $this->output, $player1);
         }
-
         app(CommandService::class)->playQuiz($this->input, $this->output, $player2, $questions, $helper);
-
     }
 
     /**
