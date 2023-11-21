@@ -4,11 +4,10 @@ namespace App\Console\Commands;
 
 use App\Services\Command\CommandService;
 use App\Services\Question\QuestionService;
+use Exception;
 use Illuminate\Console\Command;
-use Illuminate\Console\OutputStyle;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
-use Symfony\Component\Console\Input\InputInterface;
 
 class TriviaGameCommand extends Command
 {
@@ -30,7 +29,7 @@ class TriviaGameCommand extends Command
      * @return void
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
-     * @throws \Exception
+     * @throws Exception
      */
     public function handle(): void
     {
